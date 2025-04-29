@@ -1,0 +1,985 @@
+Found 18 CSV files in 'inputs/':
+
+- Search products 26March2020.csv
+- fish_weighting.csv
+- categories anonymised.csv
+- Nutrient Info By LCA Category 24April2020.csv
+- lcadat 17october2019.csv
+- jp_lca_dat.csv
+- Search words 6April2020 try2.csv
+- Search words, second round, 22Jan2022_old.csv
+- fish_matching.csv
+- jp_lca_dat_old.csv
+- Results_21Mar2022.csv
+- Search words, cheese 22Jan2022.csv
+- LCA_Ratios_Import.csv
+- Search words, second round, 17Jan202.csv
+- fish_env_info.csv
+- products anonymised.csv
+- Search words, second round, 31Jan2022.csv
+- Search words, second round, 22Jan2022.csv
+
+========================================
+Inspecting file: Search products 26March2020.csv
+========================================
+Shape: (98, 3)
+
+column Info:
+LCA_Category      object
+Convert_to_na    float64
+Search_Words      object
+dtype: object
+
+Missing Values:
+LCA_Category      0
+Convert_to_na    98
+Search_Words      0
+dtype: int64
+       Convert_to_na
+count            0.0
+mean             NaN
+std              NaN
+min              NaN
+25%              NaN
+50%              NaN
+75%              NaN
+max              NaN
+
+Descriptive Statistics (Categorical):
+               LCA_Category                                       Search_Words
+count                    98                                                 98
+unique                   51                                                 97
+top     Wheat & Rye (Bread)  \bsoup|\btuna steak|\bpower razor|\bavocado ha...
+freq                      3                                                  2
+
+========================================
+Inspecting file: fish_weighting.csv
+========================================
+Shape: (44, 9)
+
+column Info:
+Type                 object
+Species              object
+LCA_Category         object
+LCA_Category_sub     object
+Gephart Category     object
+Capture             float64
+Total by Group      float64
+Grand Total         float64
+Weighting           float64
+dtype: object
+
+Missing Values:
+Type                 2
+Species              2
+LCA_Category         2
+LCA_Category_sub     2
+Gephart Category    16
+Capture              2
+Total by Group       2
+Grand Total          2
+Weighting            1
+dtype: int64
+            Capture  Total by Group  Grand Total  Weighting
+count     42.000000       42.000000         42.0  43.000000
+mean    2032.238095    28893.809524      85354.0   0.046512
+std     6689.721711    32535.267518          0.0   0.167804
+min       16.000000      530.000000      85354.0   0.000187
+25%      272.500000     5959.000000      85354.0   0.003292
+50%      531.500000     6939.000000      85354.0   0.006678
+75%     1427.500000    71926.000000      85354.0   0.017662
+max    43572.000000    71926.000000      85354.0   1.000000
+
+Descriptive Statistics (Categorical):
+           Type Species LCA_Category LCA_Category_sub      Gephart Category
+count        42      42           42               42                    28
+unique        4      24            2                4                     5
+top     Finfish  Shrimp         Fish       Other fish  Small pelagic fishes
+freq         15       6           30               30                     9
+
+========================================
+Inspecting file: categories anonymised.csv
+========================================
+Shape: (230882, 6)
+
+column Info:
+product_id       int64
+name             int64
+main_category    int64
+department       int64
+aisle            int64
+shelf            int64
+dtype: object
+
+Missing Values:
+product_id       0
+name             0
+main_category    0
+department       0
+aisle            0
+shelf            0
+dtype: int64
+         product_id           name  ...          aisle          shelf
+count  2.308820e+05  230882.000000  ...  230882.000000  230882.000000
+mean   1.193572e+07    1926.168796  ...    1294.331975     186.348000
+std    2.891344e+04    1061.788132  ...     777.625616      31.665506
+min    1.188312e+07       1.000000  ...       1.000000       1.000000
+25%    1.191048e+07    1123.000000  ...     611.000000     192.000000
+50%    1.193458e+07    1795.000000  ...    1422.000000     192.000000
+75%    1.196369e+07    2699.000000  ...    1851.000000     192.000000
+max    1.198418e+07    4137.000000  ...    2586.000000     296.000000
+
+[8 rows x 6 columns]
+
+No categorical columns.
+
+========================================
+Inspecting file: Nutrient Info By LCA Category 24April2020.csv
+========================================
+Shape: (50, 31)
+
+column Info:
+food.group              object
+Calories               float64
+Protein                float64
+Fat                    float64
+Carbohydrates          float64
+Vitamin.C              float64
+Vitamin.A              float64
+Folate                 float64
+Calcium                float64
+Iron                   float64
+Zinc                   float64
+Potassium              float64
+Dietary.Fiber          float64
+Copper                 float64
+Sodium                 float64
+Phosphorus             float64
+Thiamin                float64
+Riboflavin             float64
+Niacin                 float64
+B6                     float64
+Choline                float64
+Magnesium              float64
+Manganese              float64
+Saturated.FA           float64
+Monounsaturated.FA     float64
+Polyunsaturated.FA     float64
+Omega.3..USDA.only.    float64
+B12..USDA.only.        float64
+Water.moisture         float64
+Ash                    float64
+Refuse                 float64
+dtype: object
+
+Missing Values:
+food.group              0
+Calories                1
+Protein                 1
+Fat                     1
+Carbohydrates           1
+Vitamin.C               1
+Vitamin.A               1
+Folate                  1
+Calcium                 1
+Iron                    1
+Zinc                    1
+Potassium               1
+Dietary.Fiber           1
+Copper                  2
+Sodium                  1
+Phosphorus              1
+Thiamin                 1
+Riboflavin              1
+Niacin                  1
+B6                      1
+Choline                 9
+Magnesium               1
+Manganese               2
+Saturated.FA            1
+Monounsaturated.FA      1
+Polyunsaturated.FA      1
+Omega.3..USDA.only.    50
+B12..USDA.only.         1
+Water.moisture          1
+Ash                     1
+Refuse                  3
+dtype: int64
+         Calories    Protein         Fat  ...  Water.moisture        Ash    Refuse
+count   49.000000  49.000000   49.000000  ...       49.000000  49.000000  47.00000
+mean   307.580857   8.578474   21.779843  ...       41.797686   1.406758   9.59147
+std    270.766486   9.286329   33.126863  ...       36.005627   1.567444  12.33032
+min      6.231250   0.000000    0.000000  ...        0.000000   0.000000   0.00000
+25%     81.500000   0.905000    0.331300  ...        6.500000   0.500000   0.00000
+50%    267.000000   2.332000    4.092381  ...       41.989655   0.820000   0.00000
+75%    393.000000  16.880000   24.050000  ...       80.018846   1.720000  19.00000
+max    902.000000  36.490000  100.000000  ...       94.520000   5.800000  46.00000
+
+[8 rows x 30 columns]
+
+Descriptive Statistics (Categorical):
+       food.group
+count          50
+unique         50
+top          Rice
+freq            1
+
+========================================
+Inspecting file: lcadat 17october2019.csv
+========================================
+Shape: (65, 11)
+
+column Info:
+Data S2 Name                                             object
+Group                                                    object
+Land Use (m2*year)                                      float64
+Arable Land Use (m2*year)                               float64
+Pasture Land Use (m2*year)                              float64
+Biodiversity (sp*yr*10^14)                              float64
+GHG Emissions (kg CO2eq, IPCC2013 incl CC feedbacks)    float64
+Acidification (g SO2eq)                                 float64
+Eutrophication (g PO43-eq)                              float64
+Water Use (L)                                           float64
+Scarcity Weighted Water Use (L eq)                      float64
+dtype: object
+
+Missing Values:
+Data S2 Name                                            0
+Group                                                   0
+Land Use (m2*year)                                      0
+Arable Land Use (m2*year)                               0
+Pasture Land Use (m2*year)                              0
+Biodiversity (sp*yr*10^14)                              0
+GHG Emissions (kg CO2eq, IPCC2013 incl CC feedbacks)    0
+Acidification (g SO2eq)                                 0
+Eutrophication (g PO43-eq)                              0
+Water Use (L)                                           0
+Scarcity Weighted Water Use (L eq)                      0
+dtype: int64
+       Land Use (m2*year)  ...  Scarcity Weighted Water Use (L eq)
+count           65.000000  ...                           65.000000
+mean            29.173535  ...                        24372.123805
+std             74.985818  ...                        28889.907040
+min              0.000000  ...                            0.000000
+25%              1.110000  ...                         2298.487278
+50%              4.720000  ...                        16127.251770
+75%             15.570000  ...                        34215.383670
+max            369.810000  ...                       115828.725700
+
+[8 rows x 9 columns]
+
+Descriptive Statistics (Categorical):
+               Data S2 Name         Group
+count                    65            65
+unique                   65             9
+top     Wheat & Rye (Bread)  protein_rich
+freq                      1            19
+
+========================================
+Inspecting file: jp_lca_dat.csv
+========================================
+Shape: (1258, 17)
+
+column Info:
+Product id                                                int64
+Data S2 Name                                             object
+Group                                                    object
+id                                                        int64
+Product_details                                          object
+Country                                                  object
+Weight                                                   object
+Land Use (m2*year)                                      float64
+Arable Land Use (m2*year)                               float64
+Pasture Land Use (m2*year)                              float64
+Biodiversity (sp*yr*10^14)                              float64
+GHG Emissions (kg CO2eq, IPCC2013 incl CC feedbacks)    float64
+Acidification (g SO2eq)                                  object
+Eutrophication (g PO43-eq)                              float64
+Water Use (L)                                           float64
+Scarcity Weighted Water Use (L eq)                      float64
+Sys                                                      object
+dtype: object
+
+Missing Values:
+Product id                                              0
+Data S2 Name                                            0
+Group                                                   0
+id                                                      0
+Product_details                                         0
+Country                                                 0
+Weight                                                  0
+Land Use (m2*year)                                      0
+Arable Land Use (m2*year)                               0
+Pasture Land Use (m2*year)                              0
+Biodiversity (sp*yr*10^14)                              0
+GHG Emissions (kg CO2eq, IPCC2013 incl CC feedbacks)    0
+Acidification (g SO2eq)                                 0
+Eutrophication (g PO43-eq)                              0
+Water Use (L)                                           0
+Scarcity Weighted Water Use (L eq)                      0
+Sys                                                     0
+dtype: int64
+        Product id  ...  Scarcity Weighted Water Use (L eq)
+count  1258.000000  ...                        1.258000e+03
+mean     17.929253  ...                        3.145619e+04
+std      13.560927  ...                        1.035071e+05
+min       1.000000  ...                        0.000000e+00
+25%       5.000000  ...                        1.161000e+01
+50%      18.000000  ...                        3.098950e+02
+75%      29.000000  ...                        1.673413e+04
+max      43.000000  ...                        1.308548e+06
+
+[8 rows x 10 columns]
+
+Descriptive Statistics (Categorical):
+               Data S2 Name        Group  ... Acidification (g SO2eq)   Sys
+count                  1258         1258  ...                    1258  1258
+unique                   43            9  ...                     971     4
+top     Wheat & Rye (Bread)  starch_rich  ...                       -     C
+freq                    166          360  ...                      80  1052
+
+[4 rows x 7 columns]
+
+========================================
+Inspecting file: Search words 6April2020 try2.csv
+========================================
+Shape: (55, 2)
+
+column Info:
+LCA_Category    object
+Search_Words    object
+dtype: object
+
+Missing Values:
+LCA_Category    0
+Search_Words    0
+dtype: int64
+               LCA_Category                                       Search_Words
+count                    55                                                 55
+unique                   50                                                 55
+top     Wheat & Rye (Bread)  \brice\b|\brices\b|\bjasmine\b|\bbasmati\b|\br...
+freq                      2                                                  1
+
+Descriptive Statistics (Categorical):
+               LCA_Category                                       Search_Words
+count                    55                                                 55
+unique                   50                                                 55
+top     Wheat & Rye (Bread)  \brice\b|\brices\b|\bjasmine\b|\bbasmati\b|\br...
+freq                      2                                                  1
+
+========================================
+Inspecting file: Search words, second round, 22Jan2022_old.csv
+========================================
+Shape: (178, 12)
+
+column Info:
+Unnamed: 0                      float64
+count (lca observations)          int64
+LCA_Category                     object
+Product_details                  object
+LCA_sub_category                 object
+LCA_sub_sub_category             object
+Search_terms                     object
+Search_order                    float64
+Average_of_original_category     object
+Search_terms_sub                 object
+Search_order_sub                float64
+Average_of_sub_category          object
+dtype: object
+
+Missing Values:
+Unnamed: 0                        3
+count (lca observations)          0
+LCA_Category                      0
+Product_details                   1
+LCA_sub_category                 32
+LCA_sub_sub_category            144
+Search_terms                     59
+Search_order                     34
+Average_of_original_category    130
+Search_terms_sub                157
+Search_order_sub                144
+Average_of_sub_category         150
+dtype: int64
+       Unnamed: 0  count (lca observations)  Search_order  Search_order_sub
+count  175.000000                178.000000    144.000000         34.000000
+mean    64.714286                  7.539326      2.416667          2.470588
+std     48.148818                 12.284349      1.421611          1.637354
+min      0.000000                  0.000000      1.000000          1.000000
+25%     19.500000                  1.000000      1.000000          1.000000
+50%     63.000000                  3.000000      2.000000          2.000000
+75%    106.500000                  8.000000      3.000000          3.000000
+max    150.000000                 82.000000      7.000000          7.000000
+
+Descriptive Statistics (Categorical):
+            LCA_Category  ... Average_of_sub_category
+count                178  ...                      28
+unique                43  ...                       1
+top     Other Vegetables  ...                     yes
+freq                  15  ...                      28
+
+[4 rows x 8 columns]
+
+========================================
+Inspecting file: fish_matching.csv
+========================================
+Shape: (9, 4)
+
+column Info:
+LCA_Category        object
+LCA_Category_sub    object
+Gephart Match       object
+FAO Match           object
+dtype: object
+
+Missing Values:
+LCA_Category        0
+LCA_Category_sub    0
+Gephart Match       7
+FAO Match           0
+dtype: int64
+          LCA_Category LCA_Category_sub Gephart Match FAO Match
+count                9                9             2         9
+unique               2                9             1         3
+top     Fish (capture)   Carp & catfish       Shrimps   Finfish
+freq                 6                1             2         6
+
+Descriptive Statistics (Categorical):
+          LCA_Category LCA_Category_sub Gephart Match FAO Match
+count                9                9             2         9
+unique               2                9             1         3
+top     Fish (capture)   Carp & catfish       Shrimps   Finfish
+freq                 6                1             2         6
+
+========================================
+Inspecting file: jp_lca_dat_old.csv
+========================================
+Shape: (1258, 16)
+
+column Info:
+Product id                                                int64
+Data S2 Name                                             object
+Group                                                    object
+id                                                        int64
+Product_details                                          object
+Country                                                  object
+Weight                                                   object
+Land Use (m2*year)                                      float64
+Arable Land Use (m2*year)                               float64
+Pasture Land Use (m2*year)                              float64
+Biodiversity (sp*yr*10^14)                              float64
+GHG Emissions (kg CO2eq, IPCC2013 incl CC feedbacks)    float64
+Acidification (g SO2eq)                                  object
+Eutrophication (g PO43-eq)                              float64
+Water Use (L)                                           float64
+Scarcity Weighted Water Use (L eq)                      float64
+dtype: object
+
+Missing Values:
+Product id                                              0
+Data S2 Name                                            0
+Group                                                   0
+id                                                      0
+Product_details                                         0
+Country                                                 0
+Weight                                                  0
+Land Use (m2*year)                                      0
+Arable Land Use (m2*year)                               0
+Pasture Land Use (m2*year)                              0
+Biodiversity (sp*yr*10^14)                              0
+GHG Emissions (kg CO2eq, IPCC2013 incl CC feedbacks)    0
+Acidification (g SO2eq)                                 0
+Eutrophication (g PO43-eq)                              0
+Water Use (L)                                           0
+Scarcity Weighted Water Use (L eq)                      0
+dtype: int64
+        Product id  ...  Scarcity Weighted Water Use (L eq)
+count  1258.000000  ...                        1.258000e+03
+mean     17.929253  ...                        3.145619e+04
+std      13.560927  ...                        1.035071e+05
+min       1.000000  ...                        0.000000e+00
+25%       5.000000  ...                        1.161000e+01
+50%      18.000000  ...                        3.098950e+02
+75%      29.000000  ...                        1.673413e+04
+max      43.000000  ...                        1.308548e+06
+
+[8 rows x 10 columns]
+
+Descriptive Statistics (Categorical):
+               Data S2 Name        Group  ... Weight Acidification (g SO2eq)
+count                  1258         1258  ...   1258                    1258
+unique                   43            9  ...    112                     971
+top     Wheat & Rye (Bread)  starch_rich  ...   0.0%                       -
+freq                    166          360  ...    223                      80
+
+[4 rows x 6 columns]
+
+========================================
+Inspecting file: Results_21Mar2022.csv
+========================================
+Shape: (72000, 24)
+
+column Info:
+mc_run_id           int64
+grouping           object
+mean_ghgs         float64
+mean_land         float64
+mean_watscar      float64
+mean_eut          float64
+mean_ghgs_ch4     float64
+mean_ghgs_n2o     float64
+mean_bio          float64
+mean_watuse       float64
+mean_acid         float64
+sd_ghgs           float64
+sd_land           float64
+sd_watscar        float64
+sd_eut            float64
+sd_ghgs_ch4       float64
+sd_ghgs_n2o       float64
+sd_bio            float64
+sd_watuse         float64
+sd_acid           float64
+n_participants      int64
+sex                object
+diet_group         object
+age_group          object
+dtype: object
+
+Missing Values:
+mc_run_id         0
+grouping          0
+mean_ghgs         0
+mean_land         0
+mean_watscar      0
+mean_eut          0
+mean_ghgs_ch4     0
+mean_ghgs_n2o     0
+mean_bio          0
+mean_watuse       0
+mean_acid         0
+sd_ghgs           0
+sd_land           0
+sd_watscar        0
+sd_eut            0
+sd_ghgs_ch4       0
+sd_ghgs_n2o       0
+sd_bio            0
+sd_watuse         0
+sd_acid           0
+n_participants    0
+sex               0
+diet_group        0
+age_group         0
+dtype: int64
+          mc_run_id     mean_ghgs  ...       sd_acid  n_participants
+count  72000.000000  72000.000000  ...  72000.000000    72000.000000
+mean     500.500000      6.173568  ...      8.544557      770.888889
+std      288.676995      3.090398  ...      2.812237      830.476694
+min        1.000000      1.878054  ...      2.463158       19.000000
+25%      250.750000      4.272191  ...      7.414466      210.000000
+50%      500.500000      5.460742  ...      8.226186      440.000000
+75%      750.250000      7.498673  ...      9.223864      982.500000
+max     1000.000000     20.543958  ...     29.240519     3752.000000
+
+[8 rows x 20 columns]
+
+Descriptive Statistics (Categorical):
+                 grouping     sex diet_group age_group
+count               72000   72000      72000     72000
+unique                 72       2          6         6
+top     fish_female_20-29  female       fish     20-29
+freq                 1000   36000      12000     12000
+
+========================================
+Inspecting file: Search words, cheese 22Jan2022.csv
+========================================
+Shape: (4, 12)
+
+column Info:
+Unnamed: 0                      float64
+count (lca observations)        float64
+LCA_Category                     object
+Product_details                 float64
+LCA_sub_category                 object
+LCA_sub_sub_category            float64
+Search_terms                     object
+Search_order                      int64
+Average_of_original_category     object
+Search_terms_sub                float64
+Search_order_sub                float64
+Average_of_sub_category         float64
+dtype: object
+
+Missing Values:
+Unnamed: 0                      3
+count (lca observations)        3
+LCA_Category                    0
+Product_details                 4
+LCA_sub_category                0
+LCA_sub_sub_category            4
+Search_terms                    1
+Search_order                    0
+Average_of_original_category    3
+Search_terms_sub                4
+Search_order_sub                4
+Average_of_sub_category         4
+dtype: int64
+       Unnamed: 0  ...  Average_of_sub_category
+count         1.0  ...                      0.0
+mean          1.0  ...                      NaN
+std           NaN  ...                      NaN
+min           1.0  ...                      NaN
+25%           1.0  ...                      NaN
+50%           1.0  ...                      NaN
+75%           1.0  ...                      NaN
+max           1.0  ...                      NaN
+
+[8 rows x 8 columns]
+
+Descriptive Statistics (Categorical):
+       LCA_Category  ... Average_of_original_category
+count             4  ...                            1
+unique            1  ...                            1
+top          Cheese  ...                          yes
+freq              4  ...                            1
+
+[4 rows x 4 columns]
+
+========================================
+Inspecting file: LCA_Ratios_Import.csv
+========================================
+Shape: (12, 14)
+
+column Info:
+Data S2 Name                                             object
+Original_Food                                            object
+Land Use (m2*year)                                      float64
+Arable Land Use (m2*year)                               float64
+Pasture Land Use (m2*year)                              float64
+Biodiversity (sp*yr*10^14)                              float64
+GHG Emissions (kg CO2eq, IPCC2013 incl CC feedbacks)    float64
+Acidification (g SO2eq)                                 float64
+Eutrophication (g PO43-eq)                              float64
+Water Use (L)                                           float64
+Scarcity Weighted Water Use (L eq)                      float64
+ch4_in_kgco2eq                                          float64
+n2o_in_kgco2eq                                          float64
+co2_in_kgco2eq                                          float64
+dtype: object
+
+Missing Values:
+Data S2 Name                                            0
+Original_Food                                           0
+Land Use (m2*year)                                      0
+Arable Land Use (m2*year)                               0
+Pasture Land Use (m2*year)                              9
+Biodiversity (sp*yr*10^14)                              0
+GHG Emissions (kg CO2eq, IPCC2013 incl CC feedbacks)    0
+Acidification (g SO2eq)                                 0
+Eutrophication (g PO43-eq)                              0
+Water Use (L)                                           0
+Scarcity Weighted Water Use (L eq)                      0
+ch4_in_kgco2eq                                          0
+n2o_in_kgco2eq                                          0
+co2_in_kgco2eq                                          0
+dtype: int64
+       Land Use (m2*year)  ...  co2_in_kgco2eq
+count           12.000000  ...       12.000000
+mean             4.974854  ...        1.956342
+std              7.336706  ...        1.432810
+min              0.750000  ...        0.614286
+25%              1.100515  ...        0.975999
+50%              1.691254  ...        1.616559
+75%              5.654762  ...        2.188889
+max             26.110117  ...        5.479729
+
+[8 rows x 12 columns]
+
+Descriptive Statistics (Categorical):
+       Data S2 Name Original_Food
+count            12            12
+unique           12             8
+top     Almond milk        Cheese
+freq              1             3
+
+========================================
+Inspecting file: Search words, second round, 17Jan202.csv
+========================================
+Shape: (153, 11)
+
+column Info:
+Unnamed: 0                      float64
+LCA_Category                     object
+Product_details                  object
+count                           float64
+New_category                     object
+Search_terms                     object
+Search_order                    float64
+Average_of_original_category     object
+Search_terms_sub                 object
+Search_order_sub                float64
+Average_of_sub_category         float64
+dtype: object
+
+Missing Values:
+Unnamed: 0                        2
+LCA_Category                      0
+Product_details                   0
+count                             2
+New_category                     76
+Search_terms                     76
+Search_order                     75
+Average_of_original_category    141
+Search_terms_sub                151
+Search_order_sub                153
+Average_of_sub_category         153
+dtype: int64
+       Unnamed: 0       count  ...  Search_order_sub  Average_of_sub_category
+count  151.000000  151.000000  ...               0.0                      0.0
+mean    75.119205    8.331126  ...               NaN                      NaN
+std     43.552409   12.647910  ...               NaN                      NaN
+min      1.000000    0.000000  ...               NaN                      NaN
+25%     37.500000    2.000000  ...               NaN                      NaN
+50%     75.000000    3.000000  ...               NaN                      NaN
+75%    112.500000   10.000000  ...               NaN                      NaN
+max    150.000000   82.000000  ...               NaN                      NaN
+
+[8 rows x 5 columns]
+
+Descriptive Statistics (Categorical):
+         LCA_Category  ...                                   Search_terms_sub
+count             153  ...                                                  2
+unique             43  ...                                                  2
+top     Barley (Beer)  ...  \bbroccoli\b|\bbroccolini\b|broccoletti|brocco...
+freq               12  ...                                                  1
+
+[4 rows x 6 columns]
+
+========================================
+Inspecting file: fish_env_info.csv
+========================================
+Shape: (262, 12)
+
+column Info:
+taxa               object
+full_taxa_name     object
+stressor           object
+source             object
+median            float64
+lower_95          float64
+upper_95          float64
+weight             object
+allocation         object
+production         object
+Unnamed: 10       float64
+Unnamed: 11        object
+dtype: object
+
+Missing Values:
+taxa                0
+full_taxa_name      0
+stressor            0
+source              0
+median              0
+lower_95            0
+upper_95            0
+weight              0
+allocation          0
+production          0
+Unnamed: 10       262
+Unnamed: 11       250
+dtype: int64
+             median      lower_95      upper_95  Unnamed: 10
+count    262.000000    262.000000    262.000000          0.0
+mean    2876.615731   1673.287881   4242.461311          NaN
+std     4175.883960   3180.484894   5993.721994          NaN
+min     -129.867195 -10002.882410    -70.300161          NaN
+25%       24.843311      9.271620     39.019761          NaN
+50%      231.640285     95.282751    536.806260          NaN
+75%     4534.310010   2548.522348   6850.491356          NaN
+max    20313.314440  15956.194920  26436.774510          NaN
+
+Descriptive Statistics (Categorical):
+            taxa full_taxa_name  ...   production     Unnamed: 11
+count        262            262  ...          262              12
+unique        23             23  ...            2               6
+top     bivalves       bivalves  ...  aquaculture  Carp & catfish
+freq          20             20  ...          240               4
+
+[4 rows x 8 columns]
+
+========================================
+Inspecting file: products anonymised.csv
+========================================
+Shape: (101166, 19)
+
+column Info:
+product_id                int64
+snapshot_id               int64
+product_list_name         int64
+product_name              int64
+url                       int64
+ingredients_text         object
+energy_per_100           object
+fat_per_100              object
+saturates_per_100        object
+salt_per_100             object
+sugar_per_100            object
+carbohydrate_per_100     object
+protein_per_100          object
+fibre_per_100            object
+serving                  object
+serving_data            float64
+serving_value            object
+serving_unit             object
+Retailer                  int64
+dtype: object
+
+Missing Values:
+product_id                   0
+snapshot_id                  0
+product_list_name            0
+product_name                 0
+url                          0
+ingredients_text         21779
+energy_per_100           63447
+fat_per_100              38952
+saturates_per_100        23485
+salt_per_100             39032
+sugar_per_100            22407
+carbohydrate_per_100     22036
+protein_per_100          38354
+fibre_per_100            41370
+serving                  62879
+serving_data            101166
+serving_value            62882
+serving_unit             68505
+Retailer                     0
+dtype: int64
+         product_id    snapshot_id  ...  serving_data       Retailer
+count  1.011660e+05  101166.000000  ...           0.0  101166.000000
+mean   1.193381e+07    1077.428237  ...           NaN    3863.239626
+std    2.912246e+04       1.721046  ...           NaN    2247.585681
+min    1.188327e+07    1075.000000  ...           NaN     684.000000
+25%    1.190881e+07    1076.000000  ...           NaN    2238.000000
+50%    1.193396e+07    1077.000000  ...           NaN    3652.000000
+75%    1.195897e+07    1079.000000  ...           NaN    5729.000000
+max    1.198418e+07    1082.000000  ...           NaN    8360.000000
+
+[8 rows x 7 columns]
+
+Descriptive Statistics (Categorical):
+                                         ingredients_text  ... serving_unit
+count                                               79387  ...        32661
+unique                                              60043  ...            9
+top     WheatFlour, Partially Reconstituted Tomato Pas...  ...            g
+freq                                                  256  ...        26165
+
+[4 rows x 12 columns]
+
+========================================
+Inspecting file: Search words, second round, 31Jan2022.csv
+========================================
+Shape: (172, 12)
+
+column Info:
+Unnamed: 0                      float64
+count (lca observations)          int64
+LCA_Category                     object
+Product_details                  object
+LCA_sub_category                 object
+LCA_sub_sub_category             object
+Search_terms                     object
+Search_order                    float64
+Average_of_original_category     object
+Search_terms_sub                 object
+Search_order_sub                float64
+Average_of_sub_category          object
+dtype: object
+
+Missing Values:
+Unnamed: 0                        3
+count (lca observations)          0
+LCA_Category                      0
+Product_details                   1
+LCA_sub_category                 37
+LCA_sub_sub_category            138
+Search_terms                     59
+Search_order                     37
+Average_of_original_category    133
+Search_terms_sub                151
+Search_order_sub                138
+Average_of_sub_category         144
+dtype: int64
+       Unnamed: 0  count (lca observations)  Search_order  Search_order_sub
+count  169.000000                172.000000    135.000000         34.000000
+mean    67.011834                  7.802326      2.422222          2.470588
+std     47.394367                 12.415157      1.427171          1.637354
+min      0.000000                  0.000000      1.000000          1.000000
+25%     24.000000                  1.000000      1.000000          1.000000
+50%     66.000000                  3.000000      2.000000          2.000000
+75%    108.000000                  9.000000      3.000000          3.000000
+max    150.000000                 82.000000      7.000000          7.000000
+
+Descriptive Statistics (Categorical):
+            LCA_Category  ... Average_of_sub_category
+count                172  ...                      28
+unique                43  ...                       1
+top     Other Vegetables  ...                     yes
+freq                  15  ...                      28
+
+[4 rows x 8 columns]
+
+========================================
+Inspecting file: Search words, second round, 22Jan2022.csv
+========================================
+Shape: (172, 12)
+
+column Info:
+Unnamed: 0                      float64
+count (lca observations)          int64
+LCA_Category                     object
+Product_details                  object
+LCA_sub_category                 object
+LCA_sub_sub_category             object
+Search_terms                     object
+Search_order                    float64
+Average_of_original_category     object
+Search_terms_sub                 object
+Search_order_sub                float64
+Average_of_sub_category          object
+dtype: object
+
+Missing Values:
+Unnamed: 0                        3
+count (lca observations)          0
+LCA_Category                      0
+Product_details                   1
+LCA_sub_category                 37
+LCA_sub_sub_category            138
+Search_terms                     59
+Search_order                     37
+Average_of_original_category    133
+Search_terms_sub                151
+Search_order_sub                138
+Average_of_sub_category         144
+dtype: int64
+       Unnamed: 0  count (lca observations)  Search_order  Search_order_sub
+count  169.000000                172.000000    135.000000         34.000000
+mean    67.011834                  7.802326      2.422222          2.470588
+std     47.394367                 12.415157      1.427171          1.637354
+min      0.000000                  0.000000      1.000000          1.000000
+25%     24.000000                  1.000000      1.000000          1.000000
+50%     66.000000                  3.000000      2.000000          2.000000
+75%    108.000000                  9.000000      3.000000          3.000000
+max    150.000000                 82.000000      7.000000          7.000000
+
+Descriptive Statistics (Categorical):
+            LCA_Category  ... Average_of_sub_category
+count                172  ...                      28
+unique                43  ...                       1
+top     Other Vegetables  ...                     yes
+freq                  15  ...                      28
+
+[4 rows x 8 columns]
