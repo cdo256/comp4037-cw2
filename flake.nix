@@ -19,18 +19,24 @@
         pkgs = nixpkgs.legacyPackages.${system};
         python = pkgs.python313;
         pythonPackages = python.pkgs;
+        inputs = with pythonPackages; [
+            ipython
+            jupyter
+            matplotlib
+            nbdime
+            numpy
+            openpyxl
+            pandas
+            scikit-learn
+            scipy
+            seaborn
+            xlrd
+            plotly
+        ];
       in
       {
         devShells.default = pkgs.mkShell {
-          packages = with pythonPackages; [
-            pandas
-            numpy
-            matplotlib
-            seaborn
-            scipy
-            jupyter
-            ipython
-          ];
+          packages = inputs;
         };
 
         packages.default = pkgs.stdenv.mkDerivation {
@@ -39,14 +45,7 @@
 
           src = ./.; # assuming your script is in the root
 
-          buildInputs = with pythonPackages; [
-            pandas
-            numpy
-            matplotlib
-            seaborn
-            scipy
-          ];
-
+          buildInputs = inputs;
           installPhase = ''
             mkdir -p $out/bin
             cp your_script.py $out/bin/
