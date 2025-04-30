@@ -2,3 +2,8 @@
 /.direnv**
 __pycache__/
 /.zed
+/.ipynb_checkpoints
+.envrc
+.gitignore
+.direnv
+.ropeproject
