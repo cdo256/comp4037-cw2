@@ -1,8 +1,6 @@
 {
-  description = "COMP4037 CW2";
-
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs";
+    nixpkgs.url = "github:nixos/nixpkgs/23.11";
     flake-utils.url = "github:numtide/flake-utils";
   };
 
@@ -16,43 +14,42 @@
     flake-utils.lib.eachDefaultSystem (
       system:
       let
-        pkgs = nixpkgs.legacyPackages.${system};
-        python = pkgs.python313;
-        pythonPackages = python.pkgs;
-        inputs = with pythonPackages; [
-            ipython
-            jupyter
-            matplotlib
-            nbdime
-            numpy
-            openpyxl
-            pandas
-            scikit-learn
-            scipy
-            seaborn
-            xlrd
-            plotly
-        ];
-      in
-      {
-        devShells.default = pkgs.mkShell {
-          packages = inputs;
+        pkgs = import nixpkgs {
+          inherit system;
         };
+      in
+      rec {
+        devShell = pkgs.mkShell {
+          buildInputs = with pkgs; [
+            (python310.withPackages (
+              ps: with ps; [
+                ipython
+                jupyter
+                jupyter-console
+                jupyter-core
+                jupyterlab
+                keras
+                matplotlib
+                nbdime
+                notebook
+                numpy
+                openpyxl
+                pandas
+                plotly
+                scikit-learn
+                scipy
+                seaborn
+                tensorflow
+                xlrd
+              ]
+            ))
+            git
+          ];
 
-        packages.default = pkgs.stdenv.mkDerivation {
-          pname = "python-analysis-script";
-          version = "0.1.0";
-
-          src = ./.; # assuming your script is in the root
-
-          buildInputs = inputs;
-          installPhase = ''
-            mkdir -p $out/bin
-            cp your_script.py $out/bin/
-            echo '#!/bin/sh' > $out/bin/run-script
-            echo '${python.interpreter} $out/bin/main.py "$@"' >> $out/bin/run-script
-            chmod +x $out/bin/run-script
-          '';
+          #shellHook = ''
+          #  echo "Starting Jupyter Notebook..."
+          #  jupyter notebook
+          #'';
         };
       }
     );
