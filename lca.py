@@ -18,7 +18,3 @@ def load():
         low_memory=False
     )
     return jp_lca
-
-jp_lca = load()
-
-pdb.set_trace()

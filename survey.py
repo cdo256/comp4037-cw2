@@ -18,5 +18,3 @@ def load():
         low_memory=False,
     )
     return survey
-
-survey = load()

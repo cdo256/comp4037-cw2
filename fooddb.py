@@ -137,7 +137,7 @@ def clean_sci_quant(string, column, default_mult):
         #print(f'No unit specified for "{column}" "{orig_string}"')
         unit_mult = default_mult # Assume default unit
 
-    print(f'{orig_string} -> {unit_list} ({unit_mult}), {quant}')
+    print(f'{column} {orig_string} -> {unit_list} ({unit_mult}), {quant}')
     return unit_mult * quant
 
 def mult_serving(row):
@@ -177,7 +177,3 @@ def clean(products, categories):
     products['fibre_per_100'] = products['fibre_per_100'].map(lambda string: clean_sci_quant(string, 'fibre_per_100', 1e-3))
 
     return products, categories, ingredients
-
-products, categories = load()
-
-products, categories, ingredients = clean(products, categories)

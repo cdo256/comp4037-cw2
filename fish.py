@@ -32,7 +32,3 @@ def load():
         low_memory=False
     )
     return fish_env_info, fish_weighting, fish_matching
-
-fish_env_info, fish_weighting, fish_matching = load()
-
-pdb.set_trace()
