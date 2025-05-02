@@ -1,2 +1,4 @@
-result**
-.direnv**
+/result**
+/.direnv**
+__pycache__/
+/.zed
