@@ -1,7 +1,9 @@
-from pathlib import Path
-import pandas as pd
-import pdb
+from dash import Dash, html
 
-pd.set_option('display.max_rows', 500)
+app = Dash()
 
-NaN = float('NaN')
+# Requires Dash 2.17.0 or later
+app.layout = [html.Div(children='Hello World')]
+
+if __name__ == '__main__':
+    app.run(debug=True)

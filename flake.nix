@@ -41,6 +41,7 @@
                 seaborn
                 tensorflow
                 xlrd
+                dash
               ]
             ))
             git
